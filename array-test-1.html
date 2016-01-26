@@ -1,0 +1,30 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+  <script>
+    var enemyLoc = [1,1]
+    var playerLoc = [4,4]
+    /* Types
+    * 1 Walkable block
+    * 2 Blocking Wall
+    * 3 Player location
+    */
+    var grid = [
+      [
+        {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}
+      ]
+    ];
+    // Find player
+    
+    // Draw grid
+    for(var xCount in grid){
+      for(var yCount in grid[xCount]){
+        console.log("Draw ["+xCount+", "+yCount"] ~ Type: "+ grid[xCount, yCount]);
+      }    
+    }
+  </script>
+</body>
+</html>
