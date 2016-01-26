@@ -36,6 +36,7 @@
     var gridItems = [];
     // create/update object list
     function updateList(){
+      console.log("Updating list");
       // Rest gridItems array
       gridItems = []
       // Loop through xVals
@@ -90,6 +91,7 @@
     }
     
     // Find player on path hunt
+    console.log("Starting path hunt");
     var stepCount = 1;
     while(playerNotFound){
       stepCount = stepCount + 1;
