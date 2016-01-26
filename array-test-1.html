@@ -102,7 +102,8 @@
       updateList();
       console.log(gridItems);
       // Now label the steps
-      for(var item in gridItems){
+      for(var i in gridItems){
+        var item = gridItems[i];
         if(item.step == stepCount - 1){
           console.log("Labelling neghbours of ["+item.xVal+","+item.yVal+"]");
           labelNeighbours(stepCount, [item.xVal,item.yVal]);
