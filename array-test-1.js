@@ -174,18 +174,19 @@ function drawGrid(){
       }else{
         var x = new Color(50, 60, 60);
       }
-      iso.add(Shape.Prism(Point(Number(yCount), Number(xCount), 0)), new Color(50, 60, 60));
+      //iso.add(Shape.Prism(Point(Number(yCount), Number(xCount), 0)), new Color(50, 60, 60));
+      iso.add(Shape.Prism(Point.ORIGIN, 10, 10, 1));
       switch(type){
         case 1:
           // Normal walking space
           break;
         case 2:
           // Walled, blocking space
-          iso.add(Shape.Prism(new Point(yCount, xCount, 1)), blue); 
+          iso.add(Shape.Prism(new Point(xCount, yCount, 1)), blue); 
           break;
         case 3:
           // Player position
-          iso.add(Shape.Pyramid(new Point(yCount, xCount, 1)), red);
+          iso.add(Shape.Pyramid(new Point(xCount, yCount, 1)), red);
           break;
       }
     }    
