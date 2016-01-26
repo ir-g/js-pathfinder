@@ -185,6 +185,7 @@ function drawGrid(){
           iso.add(Shape.Prism(new Point(xCount, yCount, 1)), blue); 
           break;
         case 3:
+          console.log("Player")
           // Player position
           iso.add(Shape.Pyramid(new Point(xCount, yCount, 1)), red);
           break;
