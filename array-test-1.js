@@ -119,7 +119,7 @@ console.log(gridItems);
 // Draw grid
 for(var xCount in grid){
   for(var yCount in grid[xCount]){
-    console.log("Draw ["+xCount+", "+yCount+"] ~ Type: "+ grid[xCount][yCount].type);
+    console.log("Draw ["+xCount+", "+yCount+"] ~ Type: "+ grid[xCount][yCount].type + " Step:" + grid[xCount][yCount].step);
   }    
 }
 
