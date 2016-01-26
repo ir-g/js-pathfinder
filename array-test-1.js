@@ -149,7 +149,7 @@ function drawGrid(){
   
   var iso = new Isomer(document.getElementById("canvas"));
   
-  var red = new Color(160, 60, 50);
+  var red = new Color(160, 60, 70);
   var blue = new Color(50, 60, 160);
   /*    
   iso.add(Shape.Prism(Point.ORIGIN, 10, 10, 1));
