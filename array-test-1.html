@@ -98,12 +98,16 @@
       console.log("Starting step"+stepCount);
       // Update grid list
       updateList();
+      console.log(gridItems);
       // Now label the steps
       for(var item in gridItems){
         if(item.step == stepCount - 1){
           console.log("Labelling neghbours of ["+item.xVal+","+item.yVal+"]");
           labelNeighbours(stepCount, [item.xVal,item.yVal]);
         }
+      }
+      if(stepCount>20){
+        playerNotFound= false;
       }
     }
     updateList();
