@@ -140,7 +140,7 @@ function doDrawExample(){
 }
 
 function drawGrid(){
-  clearRect(0, 0, canvas.width, canvas.height);
+  //clearRect(0, 0, canvas.width, canvas.height);
   var Point  = Isomer.Point;
   var Path   = Isomer.Path;
   var Shape  = Isomer.Shape;
