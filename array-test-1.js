@@ -54,20 +54,18 @@
       if(grid[x]&&grid[x][y]){
         // This grid item does exist
         if(!grid[x][y].step){
-            if(grid[x][y].step!=0){
-              // No step declared yet, carry on.
-              if(grid[x][y].type!=3){
-                console.log("Labelling ["+x+","+y+"]")
-                // This is a selectable location.
-                grid[x][y].step = currStep;
-                grid[x][y].locBefore=currCoords;
-                if(grid[x][y].type==2){
-                  // This is the player location. The player has been found.
-                  console.log("["+x+","+y+"] This is the player location. The player has been found.")
-                  playerNotFound = false;
-                }
-              }
+          // No step declared yet, carry on.
+          if(grid[x][y].type!=3){
+            console.log("Labelling ["+x+","+y+"]")
+            // This is a selectable location.
+            grid[x][y].step = currStep;
+            grid[x][y].locBefore=currCoords;
+            if(grid[x][y].type==2){
+              // This is the player location. The player has been found.
+              console.log("["+x+","+y+"] This is the player location. The player has been found.")
+              playerNotFound = false;
             }
+          }
         }else{
           // Step already declared, skip this one.
           console.log("Step already declared - ["+x+","+y+"]")
@@ -117,7 +115,7 @@
     console.log(gridItems);
     // Trace path backwards, create array of coords of path
     // Coords parent location is .locBefore
-    /*
+    
     // Draw grid
     for(var xCount in grid){
       for(var yCount in grid[xCount]){
@@ -125,4 +123,4 @@
       }    
     }
     // Draw path overlay
-    */
+    
