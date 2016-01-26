@@ -7,6 +7,7 @@
   <script>
     var enemyLoc = [1,1];
     var playerLoc = [4,4];
+    var playerNotFound = true;
     /* Types
     * 1 Walkable block
     * 2 Player location
@@ -26,7 +27,7 @@
         {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}
       ],  
       [
-        {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 3, step: null}
+        {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 2, step: null}
       ]
     ];
     // Set enemyLoc on grid to be step 0.
@@ -35,24 +36,38 @@
     var gridItems = [];
     // create/update object list
     function updateList(){
+      // Rest gridItems array
       gridItems = []
+      // Loop through xVals
       for(var xCount in grid){
+        // Loop through yVals
         for(var yCount in grid[xCount]){
+          // Select item
           var item = grid[xCount][yCount];
+          // Set x and y values
           item.xVal = xCount;
           item.yVal = yCount;
+          // Add grid item to array
           gridItems.push(item);
         }    
       }
     }
-    function labelNeighbours(currStep, coords){
+    function labelNeighbours(currStep, currCoords, coords){
       var x = coords[0];
       var y = coords[1];
       if(grid[x][y]){
         // This grid item does exist
         if(!grid[x][y].step){
           // No step declared yet, carry on.
-          if(grid[x][y].type==)
+          if(grid[x][y].type!=3){
+            // This is a selectable location.
+            grid[x][y].step = currStep;
+            grid[x][y].locBefore=currCoords;
+            if(grid[x][y].type==2){
+              // This is the player location. The player has been found.
+              playerNotFound = false;
+            }
+          }
         }else{
           // Step already declared, skip this one.
         }
@@ -63,25 +78,33 @@
     function labelNeighbours(currStep, currCoords){
       // Possible neighbours are:
       // [x+1,y] [x-1,y] [x,y+1] [x, y-1]
-      labelNeighbour(currStep, [])
+      var x = coords[0];
+      var y = coords[1];
+      labelNeighbour(currStep, currCoords, [x+1,y]);
+      labelNeighbour(currStep, currCoords, [x-1,y]);
+      labelNeighbour(currStep, currCoords, [x,y+1]);
+      labelNeighbour(currStep, currCoords, [x,y-1]);
     }
     
     // Find player on path hunt
-    var playerNotFound = true;
     var stepCount = 1;
     while(playerNotFound){
       stepCount = stepCount + 1;
       // Update grid list
       updateList();
-      // Now label the stepXs
+      // Now label the steps
       for(var item in gridItems){
         if(item.step == stepCount - 1){
           labelNeighbours(stepCount, [item.xVal,item.yVal]);
         }
       }
     }
+    updateList();
+    console.log(grid);
+    console.log(gridItems);
     // Trace path backwards, create array of coords of path
-    
+    // Coords parent location is .locBefore
+    /*
     // Draw grid
     for(var xCount in grid){
       for(var yCount in grid[xCount]){
@@ -89,7 +112,7 @@
       }    
     }
     // Draw path overlay
-    
+    */
   </script>
 </body>
 </html>
