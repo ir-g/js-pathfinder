@@ -5,8 +5,8 @@
 </head>
 <body>
   <script>
-    var enemyLoc = [1,1]
-    var playerLoc = [4,4]
+    var enemyLoc = [1,1];
+    var playerLoc = [4,4];
     /* Types
     * 1 Walkable block
     * 2 Blocking Wall
@@ -15,9 +15,44 @@
     var grid = [
       [
         {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}
+      ],
+      [
+        {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}
+      ],
+      [
+        {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}
+      ],
+      [
+        {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}
+      ],  
+      [
+        {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 3, step: null}
       ]
     ];
-    // Find player
+    // Set enemyLoc on grid to be step 0.
+    grid[enemyLoc[0]][enemyLoc[1]].step = 0;  
+    
+    var gridItems = [];
+    // create/update object list
+    function updateList(){
+      gridItems = []
+      for(var xCount in grid){
+        for(var yCount in grid[xCount]){
+          var item = grid[xCount][yCount];
+          item.xVal = xCount;
+          item.yVal = yCount;
+          gridItems.push(item);
+        }    
+      }
+    }
+    // Find player on path hunt
+    var playerNotFound = true;
+    var turnCount = 0;
+    while(playerNotFound){
+      turnCount = turnCount + 1;
+      
+    }
+    // Trace path backwards, create coords of path
     
     // Draw grid
     for(var xCount in grid){
@@ -25,6 +60,8 @@
         console.log("Draw ["+xCount+", "+yCount+"] ~ Type: "+ grid[xCount][yCount].type);
       }    
     }
+    // Draw path overlay
+    
   </script>
 </body>
 </html>
