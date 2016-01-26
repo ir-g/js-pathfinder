@@ -162,18 +162,18 @@ function drawGrid(){
       console.log("Drawing ["+xCount+", "+yCount+"] ~ Type: "+ grid[xCount][yCount].type + " Step:" + grid[xCount][yCount].step);
       var step = Number(grid[xCount][yCount].step);
       var type = grid[xCount][yCount].type;
-      iso.add(Shape.Prism(Point.ORIGIN, xCount, yCount, 1), new Color(50, 60, 10*step));
+      iso.add(Shape.Prism(new Point(xCount, yCount, 1), new Color(50, 60, 10*step)));
       switch(type){
         case 1:
           // Normal walking space
           break;
         case 2:
           // Walled, blocking space
-          iso.add(Shape.Prism(Point(xCount, yCount, 1)), blue); 
+          iso.add(Shape.Prism(new Point(xCount, yCount, 1)), blue); 
           break;
         case 3:
           // Player position
-          iso.add(Shape.Pyramid(Point(xCount, yCount, 1)), red);
+          iso.add(Shape.Pyramid(new Point(xCount, yCount, 1)), red);
           break;
       }
     }    
