@@ -11,7 +11,7 @@ var grid = [
     {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}
   ],
   [
-    {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}
+    {type: 1, step: null}, {type: 1, step: 0}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}
   ],
   [
     {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}
@@ -23,8 +23,6 @@ var grid = [
     {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 2, step: null}
   ]
 ];
-// Set enemyLoc on grid to be step 0.
-grid[enemyLoc[0]][enemyLoc[1]].step = 0;  
 
 var gridItems = [];
 // create/update object list
