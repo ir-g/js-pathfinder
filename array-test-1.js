@@ -180,11 +180,11 @@ function drawGrid(){
         case 1:
           // Normal walking space
           break;
-        case 2:
+        case 3:
           // Walled, blocking space
           iso.add(Shape.Prism(new Point(xCount, yCount, 1)), blue); 
           break;
-        case 3:
+        case 2:
           console.log("Player")
           // Player position
           iso.add(Shape.Pyramid(new Point(xCount, yCount, 1)), red);
