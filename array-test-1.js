@@ -14,7 +14,7 @@ var grid = [
     {type: 1, step: null}, {type: 1, step: 0}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}
   ],
   [
-    {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}
+    {type: 1, step: null}, {type: 3, step: null}, {type: 3, step: null}, {type: 3, step: null}, {type: 1, step: null}
   ],
   [
     {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}, {type: 1, step: null}
