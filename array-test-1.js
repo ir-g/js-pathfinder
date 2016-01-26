@@ -182,7 +182,7 @@ function drawGrid(){
           break;
         case 3:
           // Walled, blocking space
-          iso.add(Shape.Prism(new Point(xCount, yCount, 1)), blue); 
+          iso.add(Shape.Pyramid(new Point(xCount, yCount, 1)), blue); 
           break;
         case 2:
           console.log("Player")
