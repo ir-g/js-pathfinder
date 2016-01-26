@@ -162,7 +162,7 @@ function drawGrid(){
       console.log("Drawing ["+xCount+", "+yCount+"] ~ Type: "+ grid[xCount][yCount].type + " Step:" + grid[xCount][yCount].step);
       var step = Number(grid[xCount][yCount].step);
       var type = grid[xCount][yCount].type;
-      iso.add(Shape.Prism(Point(Number(xCount), Number(yCount), 0)), new Color(50, 60, 10*step));
+      iso.add(Shape.Prism(Point(Number(xCount), Number(yCount), 0)), new Color(50, 60, 4*step));
       switch(type){
         case 1:
           // Normal walking space
