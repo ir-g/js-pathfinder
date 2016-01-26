@@ -175,6 +175,7 @@ function drawGrid(){
         var x = new Color(50, 60, 60);
       }
       iso.add(Shape.Prism(Point(Number(yCount), Number(xCount), 0)), new Color(50, 60, 60));
+      sleep(200);
       switch(type){
         case 1:
           // Normal walking space
@@ -188,7 +189,8 @@ function drawGrid(){
           iso.add(Shape.Pyramid(new Point(xCount, yCount, 1)), red);
           break;
       }
+      sleep(200);
     }    
   }
 }
-drawGrid();
+
