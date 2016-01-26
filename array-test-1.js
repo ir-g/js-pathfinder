@@ -189,6 +189,7 @@ function drawGrid(){
           // Walled, blocking space
           console.log("Wall");
           iso.add(Shape.Pyramid(new Point(xCount, yCount, 1)), blue);
+          //iso.add(Shape.Pyramid(new Point(xCount, yCount, 1)), blue);
       }
     }    
   }
