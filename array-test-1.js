@@ -53,7 +53,7 @@ function labelNeighbour(currStep, currCoords, coords){
   console.log("Labelling neighour ----  ["+x+","+y+"]")
   if(grid[x]&&grid[x][y]){
     // This grid item does exist
-    if(!grid[x][y].step){
+    if(grid[x][y].step==null){
       // No step declared yet, carry on.
       if(grid[x][y].type!=3){
         console.log("Labelling ["+x+","+y+"]")
