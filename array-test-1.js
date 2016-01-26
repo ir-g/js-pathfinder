@@ -138,3 +138,44 @@ function doDrawExample(){
   iso.add(Shape.Pyramid(Point(0, 2, 1)), red);
   iso.add(Shape.Prism(Point(2, 0, 1)), blue); 
 }
+
+function drawGrid(){
+  clearRect(0, 0, canvas.width, canvas.height);
+  var Point  = Isomer.Point;
+  var Path   = Isomer.Path;
+  var Shape  = Isomer.Shape;
+  var Vector = Isomer.Vector;
+  var Color  = Isomer.Color;
+  
+  var iso = new Isomer(document.getElementById("canvas"));
+  
+  var red = new Color(160, 60, 50);
+  var blue = new Color(50, 60, 160);
+  /*    
+  iso.add(Shape.Prism(Point.ORIGIN, 10, 10, 1));
+  iso.add(Shape.Pyramid(Point(0, 2, 1)), red);
+  iso.add(Shape.Prism(Point(2, 0, 1)), blue); */
+  
+  // Draw grid
+  for(var xCount in grid){
+    for(var yCount in grid[xCount]){
+      console.log("Draw ["+xCount+", "+yCount+"] ~ Type: "+ grid[xCount][yCount].type + " Step:" + grid[xCount][yCount].step);
+      var step = Number(grid[xCount][yCount].step);
+      var type = grid[xCount][yCount].type;
+      iso.add(Shape.Prism(Point.ORIGIN, xCount, yCount, 1), new Color(50, 60, 10*step));
+      switch(type){
+        case 1:
+          // Normal walking space
+          break;
+        case 2:
+          // Walled, blocking space
+          iso.add(Shape.Prism(Point(xCount, yCount, 1)), blue); 
+          break;
+        case 3:
+          // Player position
+          iso.add(Shape.Pyramid(Point(0, 2, 1)), red);
+          break;
+      }
+    }    
+  }
+}
