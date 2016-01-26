@@ -106,6 +106,9 @@
         if(item.step == stepCount - 1){
           console.log("Labelling neghbours of ["+item.xVal+","+item.yVal+"]");
           labelNeighbours(stepCount, [item.xVal,item.yVal]);
+        }else{
+          console.log("skipping, step not true.");
+          console.log("["+item.xVal+","+item.yVal+"] - Step isnt" + item.step)
         }
       }
       if(stepCount>20){
