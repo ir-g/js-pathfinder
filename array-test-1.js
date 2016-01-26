@@ -185,10 +185,10 @@ function drawGrid(){
           // Player position
           iso.add(Shape.Pyramid(new Point(xCount, yCount, 2)), red);
           break;
-      default:
+        default:
           // Walled, blocking space
           console.log("Wall");
-          iso.add(Shape.Pyramid(new Point(xCount, yCount, 2)), blue);
+          iso.add(Shape.Pyramid(new Point(xCount, yCount, 2)), red);
           //iso.add(Shape.Pyramid(new Point(xCount, yCount, 1)), blue);
       }
     }    
