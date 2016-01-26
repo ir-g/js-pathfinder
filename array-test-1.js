@@ -124,7 +124,7 @@ for(var xCount in grid){
 }
 
 // Draw path overlay
-function doDraw(){
+function doDrawExample(){
   var Point  = Isomer.Point;
   var Path   = Isomer.Path;
   var Shape  = Isomer.Shape;
