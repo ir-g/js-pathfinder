@@ -164,9 +164,9 @@ function drawGrid(){
       var type = grid[xCount][yCount].type;
       if(step>0){
         var x = new Color(50, 60, (3*step)+30);
-        iso.add(Shape.Prism(Point(Number(xCount), Number(yCount), 0)), x);
+        iso.add(Shape.Prism(Point(Number(yCount), Number(xCount), 0)), x);
       }else{
-        iso.add(Shape.Prism(Point(Number(xCount), Number(yCount), 0)), new Color(50, 60, 60));
+        iso.add(Shape.Prism(Point(Number(yCount), Number(xCount), 0)), new Color(50, 60, 60));
       }
       switch(type){
         case 1:
