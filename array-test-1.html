@@ -9,8 +9,8 @@
     var playerLoc = [4,4];
     /* Types
     * 1 Walkable block
-    * 2 Blocking Wall
-    * 3 Player location
+    * 2 Player location
+    * 3 Blocking Wall
     */
     var grid = [
       [
@@ -45,14 +45,42 @@
         }    
       }
     }
+    function labelNeighbours(currStep, coords){
+      var x = coords[0];
+      var y = coords[1];
+      if(grid[x][y]){
+        // This grid item does exist
+        if(!grid[x][y].step){
+          // No step declared yet, carry on.
+          if(grid[x][y].type==)
+        }else{
+          // Step already declared, skip this one.
+        }
+      }else{
+        //This grid item doesn't exist
+      }
+    }
+    function labelNeighbours(currStep, currCoords){
+      // Possible neighbours are:
+      // [x+1,y] [x-1,y] [x,y+1] [x, y-1]
+      labelNeighbour(currStep, [])
+    }
+    
     // Find player on path hunt
     var playerNotFound = true;
-    var turnCount = 0;
+    var stepCount = 1;
     while(playerNotFound){
-      turnCount = turnCount + 1;
-      
+      stepCount = stepCount + 1;
+      // Update grid list
+      updateList();
+      // Now label the stepXs
+      for(var item in gridItems){
+        if(item.step == stepCount - 1){
+          labelNeighbours(stepCount, [item.xVal,item.yVal]);
+        }
+      }
     }
-    // Trace path backwards, create coords of path
+    // Trace path backwards, create array of coords of path
     
     // Draw grid
     for(var xCount in grid){
