@@ -31,19 +31,19 @@ var drawGrid = function(grid, gridItems){
       
       var step = Number(grid[xCount][yCount].step);
       var type = grid[xCount][yCount].type;
-            switch(type){
+        switch(type){
         case 1:
           // Normal walking space
           break;
         case 2:
           console.log("Player");
           // Player position
-          ctx.fillStyle = "rgb(200,0,0)";
+          ctx.fillStyle = "rgb(200,10,0)";
           break;
         default:
           // Walled, blocking space
           console.log("Wall");
-          ct.fillStyle = "rgb(0,0,200)";
+          ct.fillStyle = "rgb(0,10,200)";
           //iso.add(Shape.Pyramid(new Point(xCount, yCount, 1)), blue);
       }
       ctx.fillRect (xCount*xLen, yCount*yLen, xLen, yLen);
