@@ -6,6 +6,7 @@ var drawGrid = function(grid, gridItems){
     return;
   }
   var ctx = canvas.getContext('2d');
+  // REMEMBER: In the case of canvas, 0,0 starts in the top right corner, x goes to the right, y goes down
   var xLen = 1600/Number(grid[0].length);
   var yLen = 1200/Number(grid[0].length);
 
