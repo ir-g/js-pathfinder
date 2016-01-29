@@ -43,7 +43,7 @@ var drawGrid = function(grid, gridItems){
         default:
           // Walled, blocking space
           console.log("Wall");
-          ct.fillStyle = "rgb(0,10,200)";
+          ctx.fillStyle = "rgb(0,10,200)";
           //iso.add(Shape.Pyramid(new Point(xCount, yCount, 1)), blue);
       }
       ctx.fillRect (xCount*xLen, yCount*yLen, xLen, yLen);
