@@ -139,9 +139,9 @@ callback(grid,gridItems);
 // Export if possible
 if (typeof exports !== 'undefined') {
   if (typeof module !== 'undefined' && module.exports) {
-    exports = module.exports = pathFind;
+    exports = module.exports = findPath;
   }
-  exports._ = pathFind;
+  exports._ = findPath;
 } else {
-  root['_'] = pathFind;
+  //root['_'] = findPath;
 }
