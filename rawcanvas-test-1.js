@@ -39,14 +39,16 @@ var drawGrid = function(grid, gridItems){
           console.log("Player");
           // Player position
           ctx.fillStyle = "rgb(200,10,0)";
+          ctx.fillRect (xCount*xLen, yCount*yLen, xLen, yLen);
           break;
         default:
           // Walled, blocking space
           console.log("Wall");
           ctx.fillStyle = "rgb(0,10,200)";
+          ctx.fillRect (xCount*xLen, yCount*yLen, xLen, yLen);
           //iso.add(Shape.Pyramid(new Point(xCount, yCount, 1)), blue);
       }
-      ctx.fillRect (xCount*xLen, yCount*yLen, xLen, yLen);
+      
     }
   }
 }
