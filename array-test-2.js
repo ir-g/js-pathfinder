@@ -46,4 +46,4 @@ var drawGrid = function(grid){
     }    
   }
 }
-pathFind(true, drawGrid());
+findPath(true, drawGrid());
