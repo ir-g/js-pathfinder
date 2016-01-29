@@ -17,7 +17,7 @@ var drawGrid = function(grid, gridItems){
       ctx.fillStyle = false;
       if(step>0){
         //var tmpcol1 = [50, 60, (4*step)+30];
-        var tmpcol1 = [(4*step)+10, (4*step)+10, (4*step)+10];
+        var tmpcol1 = [(4*step)+50, (4*step)+50, (4*step)+50];
         var tmpcol2 = "rgb(" + tmpcol1.join(",") + ")";
         console.log(tmpcol2);
         //"rgb(200,0,0)";
