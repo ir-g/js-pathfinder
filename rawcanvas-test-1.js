@@ -14,6 +14,7 @@ var drawGrid = function(grid, gridItems){
       
       var step = Number(grid[xCount][yCount].step);
       var type = grid[xCount][yCount].type;
+      ctx.fillStyle = false;
       if(step>0){
         var tmpcol1 = [50, 60, (4*step)+30];
         var tmpcol2 = "rgb(" + tmpcol1.join(",") + ")";
