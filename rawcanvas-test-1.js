@@ -11,7 +11,7 @@ var drawGrid = function(grid, gridItems){
   for(var xCount in grid){
     for(var yCount in grid[xCount]){
       ctx.fillStyle = "rgb(200,0,0)";
-      ctx.fillRect (10, 10, 55, 50);
+      ctx.fillRect (xCount*xLen, yCount*yLen, xLen, yLen);
     }
   }
 }
