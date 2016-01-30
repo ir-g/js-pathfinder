@@ -81,6 +81,8 @@ var drawGrid = function(grid, gridItems){
   while(isNotEnd){
     turn = turn + 1;
     path.push(curPlayer);
+    console.log("Turn: "+turn);
+    console.log(curPlayer);
     if(grid[curPlayer[0]][curPlayer[1]]){
       curPlayer = grid[curPlayer[0]][curPlayer[1]].locBefore;
     }else{
