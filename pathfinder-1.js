@@ -1,6 +1,9 @@
-var findPath = function(doLogResult, callback){
+var findPath = function(callback){
+// CRUCIAL DATA -- MUST MATCH GRID
 var enemyLoc = [1,1];
 var playerLoc = [4,4];
+// END CRUCIAL DATA
+
 var playerNotFound = true;
 /* Types
 * 1 Walkable block
@@ -111,30 +114,28 @@ while(playerNotFound){
   }
 }
 updateList();
-if(doLogResult){
 console.log(grid);
 console.log(gridItems);
-}
 // Trace path backwards, create array of coords of path
 // Coords parent location is .locBefore
-  
-// Draw grid
-/*
-for(var xCount in grid){
-  for(var yCount in grid[xCount]){
-    console.log("Draw ["+xCount+", "+yCount+"] ~ Type: "+ grid[xCount][yCount].type + " Step:" + grid[xCount][yCount].step);
-  }    
-}
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
+
+var isNotEnd = true;
+var turn = 0;
+var path = [];
+var curPlayer = playerLoc;
+while(isNotEnd){
+  turn = turn + 1;
+  path.push(curPlayer);
+  console.log("Turn: "+turn);
+  console.log(curPlayer);
+  if(grid[curPlayer[0]][curPlayer[1]]&&grid[curPlayer[0]][curPlayer[1]].locBefore){
+    curPlayer = grid[curPlayer[0]][curPlayer[1]].locBefore;
+  }else{
+    isNotEnd = false;
   }
-}*/
+}
 // Draw path overlay
-callback(grid,gridItems);
+callback({grid: grid, gridItems: gridItems, path: path});
 }
 
 // Export if possible
