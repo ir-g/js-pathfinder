@@ -79,12 +79,12 @@ var drawGrid = function(grid, gridItems){
   var curPlayer = playerPos;
   while(isEnd){
     path.push(curPlayer);
-    if(grid[itemLoc[0]][itemLoc[1]].locBefore){
-      curPlayer = grid[itemLoc[0]][itemLoc[1]].locBefore;
+    if(grid[Number(curPlayer[0])][Number(curPlayer[1])].locBefore){
+      curPlayer = grid[Number(curPlayer[0])][Number(curPlayer[1])].locBefore;
     }else{
       isEnd = true;
     }
-    console.log(path);
   }
+  console.log(path);
 }
 findPath(true, drawGrid);
