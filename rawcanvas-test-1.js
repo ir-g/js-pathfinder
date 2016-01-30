@@ -73,6 +73,7 @@ var drawGrid = function(data){
       }
       
       // DRAW PATH HERE
+      console.log("Path");
       console.log(path);
     }
   }
