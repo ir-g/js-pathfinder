@@ -75,9 +75,11 @@ var drawGrid = function(grid, gridItems){
     return grid[itemLoc[0]][itemLoc[1]].locBefore;
   }
   isEnd = false;
+  var turn = 0;
   var path = [];
   var curPlayer = playerPos;
   while(isEnd){
+    turn = turn + 1;
     path.push(curPlayer);
     if(grid[Number(curPlayer[0])][Number(curPlayer[1])].locBefore){
       curPlayer = grid[Number(curPlayer[0])][Number(curPlayer[1])].locBefore;
