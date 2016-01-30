@@ -80,6 +80,7 @@ var drawGrid = function(grid, gridItems){
   var curPlayer = playerPos;
   while(isEnd){
     turn = turn + 1;
+    console.log(turn);
     path.push(curPlayer);
     if(grid[Number(curPlayer[0])][Number(curPlayer[1])].locBefore){
       curPlayer = grid[Number(curPlayer[0])][Number(curPlayer[1])].locBefore;
