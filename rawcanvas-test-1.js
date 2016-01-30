@@ -1,5 +1,8 @@
-var drawGrid = function(grid, gridItems){
-  var playerPos;
+var drawGrid = function(data){
+  var grid       = data.grid;
+  var gridItems  = data.gridItems;
+  var path       = data.path;
+  
   var canvas = document.getElementById('canvas');
   if (!canvas.getContext){
     // canvas-unsupported code here
@@ -71,26 +74,5 @@ var drawGrid = function(grid, gridItems){
       
     }
   }
-  // Potential path tracer
-  var getNextPos = function(itemLoc){
-    return grid[itemLoc[0]][itemLoc[1]].locBefore;
-  }
-  var isNotEnd = true;
-  var turn = 0;
-  var path = [];
-  var curPlayer = playerPos;
-  while(isNotEnd){
-    turn = turn + 1;
-    path.push(curPlayer);
-    console.log("Turn: "+turn);
-    console.log(curPlayer);
-    if(grid[curPlayer[0]][curPlayer[1]]&&grid[curPlayer[0]][curPlayer[1]].locBefore){
-      curPlayer = grid[curPlayer[0]][curPlayer[1]].locBefore;
-    }else{
-      isNotEnd = false;
-    }
-  }
-  console.log(turn);
-  console.log(path);
 }
-findPath(true, drawGrid);
+findPath(drawGrid);
