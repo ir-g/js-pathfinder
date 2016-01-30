@@ -42,7 +42,7 @@ var drawGrid = function(grid, gridItems){
         case 2:
           console.log("Player");
           // Player position
-          ctx.fillStyle = "rgb(200,10,0)";
+          ctx.fillStyle = "rgb(139,195,74)";
           ctx.fillRect (xCount*xLen, yCount*yLen, xLen, yLen);
           break;
         case 2:
