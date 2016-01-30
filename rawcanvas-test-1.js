@@ -1,4 +1,5 @@
 var drawGrid = function(grid, gridItems){
+  var playerPos;
   var canvas = document.getElementById('canvas');
   if (!canvas.getContext){
     // canvas-unsupported code here
@@ -48,6 +49,7 @@ var drawGrid = function(grid, gridItems){
         case 2:
           console.log("Player");
           // Player position
+          playerPos = [xCount,yCount];
           ctx.fillStyle = "rgb(10,200,10)";
           ctx.fillRect (xCount*xLen, yCount*yLen, xLen, yLen);
           break;
@@ -67,6 +69,22 @@ var drawGrid = function(grid, gridItems){
       }
       
     }
+  }
+  // Potential path tracer
+  var getNextPos = function(itemLoc){
+    return grid[itemLoc[0]][itemLoc[1]].locBefore;
+  }
+  isEnd = false;
+  var path = [];
+  var curPlayer = playerPos;
+  while(isEnd){
+    path.push(curPlayer);
+    if(grid[itemLoc[0]][itemLoc[1]].locBefore){
+      curPlayer = grid[itemLoc[0]][itemLoc[1]].locBefore;
+    }else{
+      isEnd = true;
+    }
+    console.log(path);
   }
 }
 findPath(true, drawGrid);
