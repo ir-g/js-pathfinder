@@ -74,7 +74,7 @@ var drawGrid = function(grid, gridItems){
   var getNextPos = function(itemLoc){
     return grid[itemLoc[0]][itemLoc[1]].locBefore;
   }
-  var isEnd = false;
+  var isNotEnd = true;
   var turn = 0;
   var path = [];
   var curPlayer = playerPos;
@@ -84,7 +84,7 @@ var drawGrid = function(grid, gridItems){
     if(grid[Number(curPlayer[0])][Number(curPlayer[1])].locBefore){
       curPlayer = grid[Number(curPlayer[0])][Number(curPlayer[1])].locBefore;
     }else{
-      isEnd = true;
+      isEnd = false;
     }
   }
   console.log(turn);
