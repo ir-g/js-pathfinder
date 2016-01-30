@@ -72,6 +72,8 @@ var drawGrid = function(data){
           break;
       }
       
+      // DRAW PATH HERE
+      console.log(path);
     }
   }
 }
