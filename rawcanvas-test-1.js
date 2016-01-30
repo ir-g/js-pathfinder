@@ -61,7 +61,7 @@ var drawGrid = function(grid, gridItems){
         case 4:
           console.log("Enemy location");
           // Player position
-          ctx.fillStyle = "rgb(200,10,0)";
+          ctx.fillStyle = "rgb(20,20,20)";
           ctx.fillRect (xCount*xLen, yCount*yLen, xLen, yLen);
           break;
       }
