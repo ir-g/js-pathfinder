@@ -45,12 +45,25 @@ var drawGrid = function(grid, gridItems){
           ctx.fillStyle = "rgb(200,10,0)";
           ctx.fillRect (xCount*xLen, yCount*yLen, xLen, yLen);
           break;
-        default:
+        case 2:
+          console.log("Player");
+          // Player position
+          ctx.fillStyle = "rgb(0,200,0)";
+          ctx.fillRect (xCount*xLen, yCount*yLen, xLen, yLen);
+          break;
+        case 3:
           // Walled, blocking space
           console.log("Wall");
           ctx.fillStyle = "rgb(0,10,200)";
           ctx.fillRect (xCount*xLen, yCount*yLen, xLen, yLen);
           //iso.add(Shape.Pyramid(new Point(xCount, yCount, 1)), blue);
+          break;
+        case 4:
+          console.log("Enemy location");
+          // Player position
+          ctx.fillStyle = "rgb(200,10,0)";
+          ctx.fillRect (xCount*xLen, yCount*yLen, xLen, yLen);
+          break;
       }
       
     }
