@@ -6,6 +6,7 @@ var playerNotFound = true;
 * 1 Walkable block
 * 2 Player location
 * 3 Blocking Wall
+* 4 Enemy location (Not used by the pathfinding engine)
 */
 var grid = [
   [
