@@ -59,7 +59,7 @@ function labelNeighbour(currStep, currCoords, coords){
         console.log("Labelling ["+x+","+y+"]")
         // This is a selectable location.
         grid[x][y].step = currStep;
-        grid[x][y].locBefore=currCoords;
+        grid[x][y].locBefore=[Number(currCoords[0]),Number(currCoords[1])];
         if(grid[x][y].type==2){
           // This is the player location. The player has been found.
           console.log("["+x+","+y+"] This is the player location. The player has been found.")
