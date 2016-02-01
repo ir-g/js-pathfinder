@@ -93,15 +93,15 @@ var drawGrid = function(data){
     ctx.fillRect ((xCount*xLen)+xLen40, (yCount*yLen)+yLen40, xLen20, yLen20);
   }
   ctx.beginPath();
-  console.log((path[0][0]*xLen)+xLen50, (path[0][1]*xLen)+xLen50);
-  ctx.moveTo((path[0][0]*xLen)+xLen50, (path[0][1]*xLen)+xLen50);
+  console.log( (path[0][0]*xLen)+xLen50, (path[0][1]*yLen)+xLen50 );
+  ctx.moveTo(  (path[0][0]*xLen)+xLen50, (path[0][1]*yLen)+xLen50 );
   for(i in path){
     var obj = path[i];
     var xCount = obj[0];
     var yCount = obj[1];
     console.log(xCount,yCount);
-    console.log((xCount*xLen)+xLen50, (xCount*xLen)+xLen50);
-    ctx.lineTo((xCount*xLen)+xLen50, (xCount*xLen)+xLen50);
+    console.log( (xCount*xLen)+xLen50, (xCount*yLen)+xLen50 );
+    ctx.lineTo(  (xCount*xLen)+xLen50, (xCount*yLen)+xLen50 );
     ctx.stroke();
   }
 }
