@@ -71,7 +71,8 @@ var drawGrid = function(data){
           ctx.fillRect (xCount*xLen, yCount*yLen, xLen, yLen);
           break;
       }
-      
+    }
+  }
       // DRAW PATH HERE
       console.log("Path");
       console.log(path);
@@ -88,7 +89,5 @@ var drawGrid = function(data){
         //ctx.fillRect (xStart, yStart, length, height);
         ctx.fillRect ((xCount*xLen)+xLen40, (yCount*yLen)+yLen40, xLen20, yLen20);
       }
-    }
-  }
 }
 findPath(drawGrid);
