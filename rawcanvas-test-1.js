@@ -97,10 +97,14 @@ var drawGrid = function(data){
   ctx.moveTo(  (path[0][0]*xLen)+xLen50, (path[0][1]*yLen)+xLen50 );
   for(i in path){
     var obj = path[i];
+    var oldObj = path[i-1]||path[i];
     var xCount = obj[0];
     var yCount = obj[1];
+    var xoldCount = obj[0];
+    var yoldCount = obj[1];
     console.log(xCount,yCount);
     console.log( (xCount*xLen)+xLen50, (xCount*yLen)+xLen50 );
+    ctx.moveTo((xoldCount*xLen)+xLen50, (xoldCount*yLen)+xLen50 );
     ctx.lineTo(  (xCount*xLen)+xLen50, (xCount*yLen)+xLen50 );
     ctx.stroke();
   }
