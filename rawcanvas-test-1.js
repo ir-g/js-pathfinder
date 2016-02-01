@@ -85,7 +85,8 @@ var drawGrid = function(data){
       ctx.fillStyle = pathColour;
       for(i in path){
         var obj = path[i];
-        var xCount = obj
+        var xCount = obj[0];
+        var yCount = obj[1];
         //ctx.fillRect (xStart, yStart, length, height);
         ctx.fillRect ((xCount*xLen)+xLen40, (yCount*yLen)+yLen40, xLen20, yLen20);
       }
