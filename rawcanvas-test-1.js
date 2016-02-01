@@ -99,6 +99,8 @@ var drawGrid = function(data){
     var obj = path[i];
     var xCount = obj[0];
     var yCount = obj[1];
+    console.log(xCount,yCount);
+    console.log((xCount*xLen)+xLen50, (xCount*xLen)+xLen50);
     ctx.lineTo((xCount*xLen)+xLen50, (xCount*xLen)+xLen50);
     ctx.stroke();
   }
