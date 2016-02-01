@@ -77,6 +77,8 @@ var drawGrid = function(data){
   console.log("Path");
   console.log(path);
   console.log("Path drawing commenced");
+  var xLen50 = xLen*0.5;
+  var yLen50 = yLen*0.5;
   var xLen40 = xLen*0.4;
   var yLen40 = yLen*0.4;
   var xLen20 = xLen*0.2;
@@ -91,14 +93,14 @@ var drawGrid = function(data){
     ctx.fillRect ((xCount*xLen)+xLen40, (yCount*yLen)+yLen40, xLen20, yLen20);
   }
   ctx.beginPath();
-  console.log(path[0][0], path[0][1]);
-  ctx.moveTo(path[0][0], path[0][1]);
+  console.log((path[0][0]*xLen)+xLen50, (path[0][1]*xLen)+xLen50);
+  ctx.moveTo((path[0][0]*xLen)+xLen50, (path[0][1]*xLen)+xLen50);
   for(i in path){
-        var obj = path[i];
-        var xCount = obj[0];
-        var yCount = obj[1];
-        ctx.lineTo(xCount, yCount);
-        ctx.stroke();
-      }
+    var obj = path[i];
+    var xCount = obj[0];
+    var yCount = obj[1];
+    ctx.lineTo((xCount*xLen)+xLen50, (xCount*xLen)+xLen50);
+    ctx.stroke();
+  }
 }
 findPath(drawGrid);
