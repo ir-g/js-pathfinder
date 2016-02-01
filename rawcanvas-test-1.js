@@ -100,8 +100,8 @@ var drawGrid = function(data){
     var oldObj = path[i-1]||path[i];
     var xCount = obj[0];
     var yCount = obj[1];
-    var xoldCount = obj[0];
-    var yoldCount = obj[1];
+    var xoldCount = oldObj[0];
+    var yoldCount = oldObj[1];
     console.log(xCount,yCount);
     console.log( (xCount*xLen)+xLen50, (xCount*yLen)+xLen50 );
     ctx.moveTo((xoldCount*xLen)+xLen50, (xoldCount*yLen)+xLen50 );
