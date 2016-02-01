@@ -73,26 +73,27 @@ var drawGrid = function(data){
       }
     }
   }
-      // DRAW PATH HERE
-      console.log("Path");
-      console.log(path);
-      console.log("Path drawing commenced");
-      var xLen40 = xLen*0.4;
-      var yLen40 = yLen*0.4;
-      var xLen20 = xLen*0.2;
-      var yLen20 = yLen*0.2;
-      var pathColour = "rgb(50,60,0)";
-      ctx.fillStyle = pathColour;
-      for(i in path){
-        var obj = path[i];
-        var xCount = obj[0];
-        var yCount = obj[1];
-        //ctx.fillRect (xStart, yStart, length, height);
-        ctx.fillRect ((xCount*xLen)+xLen40, (yCount*yLen)+yLen40, xLen20, yLen20);
-      }
-      ctx.beginPath();
-      ctx.moveTo(path[0][0], path[0][1]);
-      for(i in path){
+  // DRAW PATH HERE
+  console.log("Path");
+  console.log(path);
+  console.log("Path drawing commenced");
+  var xLen40 = xLen*0.4;
+  var yLen40 = yLen*0.4;
+  var xLen20 = xLen*0.2;
+  var yLen20 = yLen*0.2;
+  var pathColour = "rgb(50,60,0)";
+  ctx.fillStyle = pathColour;
+  for(i in path){
+    var obj = path[i];
+    var xCount = obj[0];
+    var yCount = obj[1];
+    //ctx.fillRect (xStart, yStart, length, height);
+    ctx.fillRect ((xCount*xLen)+xLen40, (yCount*yLen)+yLen40, xLen20, yLen20);
+  }
+  ctx.beginPath();
+  console.log(path[0][0], path[0][1]);
+  ctx.moveTo(path[0][0], path[0][1]);
+  for(i in path){
         var obj = path[i];
         var xCount = obj[0];
         var yCount = obj[1];
