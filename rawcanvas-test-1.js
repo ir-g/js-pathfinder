@@ -90,5 +90,14 @@ var drawGrid = function(data){
         //ctx.fillRect (xStart, yStart, length, height);
         ctx.fillRect ((xCount*xLen)+xLen40, (yCount*yLen)+yLen40, xLen20, yLen20);
       }
+      ctx.beginPath();
+      ctx.moveTo(path[0][0], path[0][1]);
+      for(i in path){
+        var obj = path[i];
+        var xCount = obj[0];
+        var yCount = obj[1];
+        ctx.lineTo(xCount, yCount);
+        ctx.stroke();
+      }
 }
 findPath(drawGrid);
